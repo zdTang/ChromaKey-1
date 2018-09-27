@@ -27,9 +27,6 @@
 
 using namespace std;
 
-// Prototypes
-// IMPORTANT: you must exactly use these input types, function names, and 
-// return types. Otherwise the grader can't test them.
 void method1(unsigned char inImage[][SIZE][RGB], 
 	     bool mask[][SIZE],
 	     double threshold);
@@ -47,9 +44,6 @@ void replace(bool mask[][SIZE],
 int main(int argc, char *argv[])
 {
   // Image data array
-  // Note:  DON'T use the static keyword except where we expressly say so.
-  //        It puts the large array in a separate, fixed, area of memory. 
-  //        It is bad practice. But useful until we have dynamic allocation.
   static unsigned char inputImage[SIZE][SIZE][RGB];
   static unsigned char bgrndImage[SIZE][SIZE][RGB];
   static unsigned char outputImage[SIZE][SIZE][RGB];
@@ -109,11 +103,6 @@ int main(int argc, char *argv[])
 
 
 // Use user-provided threshold for chroma-key distance
-// The "output" of this method is to produce a valid mask array
-//  where entries in the mask array are 1 for foreground image
-//  and 0 for 'background'
-// define top left (0)(0); RGB = the third one, [0] = R, [1] = G
-// [2] = B
 void method1(unsigned char inImage[][SIZE][RGB], 
 	     bool mask[][SIZE],
 	     double threshold)
